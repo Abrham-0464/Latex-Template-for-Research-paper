@@ -1,0 +1,99 @@
+\chapter*{Appendix}
+\addcontentsline{toc}{chapter}{Appendix}
+\section*{Appendix I: Sample of English-Xamtanga Parallel Dataset}
+% Start of the table for the parallel dataset
+\begin{table}[H] % Using H to force exact placement
+\onehalfspacing
+\centering
+\begin{tabular}{p{6cm} p{7cm}}
+\toprule % Top rule
+English Sentences & Xamtanga Sentences  \\
+\midrule % Mid rule
+Well done !  &      	\ethiopicfont{ቀሰው ሰቭ !} \\
+He is poor .   &     	\ethiopicfont{ጘጝ ድኻ የጝ ።}\\
+Can I help ?    &    	\ethiopicfont{ከቭጨ ቸለኩንመ ?}\\
+The story of Sekota city .&	\ethiopicfont{ሰቊጠ ኻትመቱ ሲጘ ።}\\
+This is a letter the officer wrote .	& \ethiopicfont{ፊልክስስም እንት የው ደብዳቢ ፃፉ።}\\
+I need a lot of books .	&	\ethiopicfont{ንቅፅው መጵኖት በነኩን ።}\\
+Who are the engineer kitaw ejigu ?	& \ethiopicfont{ኢንጅነር ቅጣው እጅጉ አው ጛይ ?}\\
+A delegation headed by Somaliland President Moses Bihi Abdi entered Jigjiga .&	\ethiopicfont{ሶማሌላንድቱ ፕሬዚዳንት ሙሴ ቢሂ አብዲስ ቃውሸው ጓነ ጅግጅጋ ጡዉው ።}\\
+When Elizabeth heard Mary’s greeting the baby inside her jumped and Elizabeth was filled with the holy spirit .	&	\ethiopicfont{የልሳቭየጥም ማርያምት ድመድ ወሽራንድ ሽልድ ጝርማፅንቲል ፅበጘ በጕሩ የልሳቭየጥትልም መንፈስ ቅዱስ እቻቑ ።}\\
+The agreement includes wide scopes of cooperation in social, economic, political and military fields . & \ethiopicfont{ቲስመምንድ ገረዱ፣ ኢኮኖሚው፣ ፖለቲኩዝመ ዊተድርነይዙ ሚስከኒዝ ፈራቐው አቭርድን ጒደንጥድ ድወው የጝ ።}\\
+\bottomrule % Bottom rule
+\end{tabular}
+\end{table}
+\section*{Appendix II: Xamtanga Alphabet}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{A 2.jpg}
+    \label{fig:Xamtanga_Alphabet} % Updated label
+\end{figure}
+\section*{Appendix III: Letter of Support}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{latex image/A3.jpg}
+    \label{fig:support_letter}
+\end{figure}
+\section*{Appendix IV: Algorithms of Character Replacement Process}
+\begin{itemize}
+    \item Read the input word character by character.
+    \item Create an empty string called result.
+    \item Loop for each character in the input word:
+    \begin{itemize}
+        \item If the character is one of \ethiopicfont{[ሀ, ሃ, ሐ, ሓ, ኅ, ኃ]}, replace it with ኻ.
+        \item Else if the character is one of [ሁ, ሑ, ኁ], replace it with ዅ.
+        \item Else if the character is one of [ሂ, ሒ, ኂ], replace it with ኺ.
+        \item Else if the character is one of [ሄ, ሔ, ኌ], replace it with ዄ.
+        \item Else if the character is one of [ህ, ሕ, ኅ], replace it with ኽ.
+        \item Else if the character is one of [ሆ, ኆ, ሖ], replace it with ኾ.
+        \item Else if the character is one of [ዓ, ኣ, ዐ], replace it with አ.
+        \item Else if the character is one of [ዑ], replace it with ኡ.
+        \item Else if the character is one of [ዒ], replace it with ኢ.
+        \item Else if the character is one of [ዔ], replace it with ኤ.
+        \item Else if the character is one of [ዕ], replace it with እ.
+        \item Else if the character is one of [ዖ], replace it with ኦ.
+        \item Else if the character is one of [ጸ], replace it with ፀ.
+        \item Else if the character is one of [ጹ], replace it with ፁ.
+        \item Else if the character is one of [ጺ], replace it with ፂ.
+        \item Else if the character is one of [ጻ], replace it with ፃ.
+        \item Else if the character is one of [ጼ], replace it with ፄ.
+        \item Else if the character is one of [ጽ], replace it with ፅ.
+        \item Else if the character is one of [ጾ], replace it with ፆ.
+    \end{itemize}
+    \item Append the replaced character to result.
+    \item Return result.
+\end{itemize}
+\section*{Appendix V: Tokenization Algorithm for Xamtanga and English}
+\begin{itemize}
+    \item The input consists of a list of parallel sentences in Xamtanga and English, each ending with a newline character (\texttt{\textbackslash n}).
+    \item Initialize an empty string variable called \texttt{"text\_pairs"}.
+    \item While there are still parallel sentences in the input, do the following:
+    \begin{itemize}
+        \item If the current sentence contains two columns (Xamtanga and English), then do the following:
+        \item Divide the sentence into two parts using the specified delimiter.
+        \item Tokenize the Xamtanga part into words.
+        \item Tokenize the English part into words.
+        \item Format the tokenized sentences appropriately and append them to \texttt{"text\_pairs"}.
+    \end{itemize}
+    \item End of the while loop.
+    \item Return the \texttt{"text\_pairs"} variable after processing all parallel sentences.
+\end{itemize}
+\section*{Appendix VI: Dataset Statistics}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{latex image/A4.png}
+    \label{fig:dataset_stats}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+

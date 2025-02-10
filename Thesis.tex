@@ -1,0 +1,157 @@
+\documentclass[12pt,a4paper]{report}
+%------------------- declaring packages---------------------------------
+\usepackage{graphicx}
+\usepackage{fontspec}  
+% Define the Ethiopic font
+\newfontface\ethiopicfont{Abyssinica SIL}[Contextuals={WordInitial,WordFinal}]
+% Define Ethiopic Bold font
+% Set the main English font (e.g., Times New Roman, but you can use others)
+\setmainfont{Times New Roman}[
+    BoldFont={Times New Roman Bold}, 
+    ItalicFont={Times New Roman Italic}
+]
+% Optionally, set a separate font for sans-serif and typewriter fonts
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+% Global font setup
+
+%------------------- additional packages ---------------------------------
+\usepackage{emptypage}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{siunitx}
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usepackage{pgffor}
+\doublespacing
+\usepackage[autostyle, english = american]{csquotes}
+\usepackage{titlesec}
+
+\titleformat{\chapter}{\centering\Large\bfseries}{\thechapter}{1em}{}
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+% Other packages
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{tabularx,ragged2e,booktabs,caption}
+\usepackage{multicol,tabularx,capt-of}
+\usepackage{hhline}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{verbatim}
+\usepackage{amsmath} 
+\usepackage{amsthm} 
+\usepackage{siunitx} 
+\usepackage{nomencl}  
+\makenomenclature     
+\usepackage{lipsum}
+
+\usepackage{acronym}
+\usepackage{glossaries}
+\usepackage{nomencl}
+\usepackage{tocloft}
+\makenomenclature
+\usepackage{cite}
+\usepackage[colorlinks = true, linkcolor = blue, urlcolor  = blue, citecolor = blue, anchorcolor = blue]{hyperref}
+\usepackage{sectsty}
+\allsectionsfont{\bfseries}
+\chapterfont{\centering\Large}
+\sectionfont{\normalsize}
+\subsectionfont{\normalsize}
+\usepackage{multicol}
+
+\usepackage [english]{babel}
+
+% header formatting
+\usepackage{layout}
+\usepackage{fancyhdr}
+\interfootnotelinepenalty=10000 
+
+\usepackage{epstopdf}
+\linespread{1.5}
+\geometry{
+    a4paper, 
+    top=2cm,
+    bottom=2cm, 
+    left=3.81cm, 
+    right=2.54cm
+}
+\setlength{\parindent}{0em}
+
+
+%----------------------------begin document-------------------------------
+\begin{document}
+
+%\frontmatter
+\pagenumbering{roman}
+\input{coverpage}
+\input{titlepage}
+\chapter*{Declaration}
+\addcontentsline{toc}{chapter}{Declaration}
+\input{Predocuments/Declaration}
+\newpage
+\input{Predocuments/copyright}
+\newpage
+\input{Predocuments/Approval sheet}
+\newpage
+\chapter*{}
+\input{Predocuments/DEDICATIONS}
+%\addcontentsline{toc}{chapter}{Dedications}
+\chapter*{Acknowledgment}
+\addcontentsline{toc}{chapter}{Acknowledgment}
+\input{Predocuments/ACKNOWLEDGMENT}
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\input{Predocuments/Abstract}
+
+% Center the table of contents heading
+\begin{center}
+    \tableofcontents{}
+\end{center}
+
+\newpage % Start new page for Lists
+
+% Center the list of tables heading
+\begin{center}
+    \listoftables{}
+\end{center}
+\addcontentsline{toc}{chapter}{List of Tables}
+
+\newpage % Start new page for Figures
+
+% Center the list of figures heading
+\begin{center}
+    \listoffigures{}
+\end{center}
+\addcontentsline{toc}{chapter}{List of Figures}
+
+%\chapter*{List of Abbreviations}
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+\include{ListofAbbreviations}
+\clearpage
+\vspace{-1cm}
+\cleardoublepage
+\clearpage
+\pagenumbering{arabic}
+\include{Chapter1}
+\include{Chapter2}
+\include{Chapter3}
+\include{Chapter4}
+\include{Chapter5}
+%\include{Chapter6}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{ieeetr}
+\bibliography{References}
+\appendix
+\include{Appendix} % This includes Appendix
+\end{document}
